@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.fragment.LoginFragment"
+    android:background="@color/gray">
+
+    <TextView
+        android:id="@+id/login_title"
+        android:layout_width="158dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/login_title_layout_marginTop"
+        android:gravity="center"
+        android:text="@string/inflix"
+        android:fontFamily="@font/carter_one"
+        android:textColor="@color/white2"
+        android:textSize="@dimen/login_title_textSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/login_editTextTextEmailAddress"
+        android:layout_width="328dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="@dimen/login_editText_layout_marginStart"
+        android:layout_marginEnd="@dimen/login_editText_layout_marginEnd"
+        android:layout_marginTop="@dimen/login_editText_layout_marginTop"
+        android:background="@drawable/edittext_background"
+        android:padding="@dimen/login_editText_padding"
+        android:textColorHint="@color/white_opacity"
+        android:ems="40"
+        android:hint="@string/email"
+        android:fontFamily="@font/roboto"
+        android:inputType="textEmailAddress"
+        android:textSize="@dimen/login_editText_textSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/login_title"
+        app:layout_constraintWidth_max="300dp" />
+
+    <EditText
+        android:id="@+id/login_editTextNumberPassword"
+        android:layout_width="328dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="@dimen/login_editText_layout_marginTop2"
+        android:layout_marginStart="@dimen/login_editText_layout_marginStart"
+        android:layout_marginEnd="@dimen/login_editText_layout_marginEnd"
+        android:background="@drawable/edittext_background"
+        app:drawableEndCompat="@drawable/ic_baseline_visibility_24"
+        android:paddingStart="@dimen/login_editText_paddingStart"
+        android:paddingEnd="@dimen/login_editText_paddingEnd"
+        android:paddingVertical="@dimen/login_editText_paddingVertical"
+        android:textColorHint="@color/white_opacity"
+        android:ems="8"
+        android:hint="@string/password"
+        android:fontFamily="@font/roboto"
+        android:inputType="numberPassword"
+        android:textSize="@dimen/login_editText_textSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/login_editTextTextEmailAddress"
+        app:layout_constraintWidth_max="@dimen/login_editText_layout_constraintWidth_max" />
+
+    <Button
+        android:id="@+id/login_button"
+        android:layout_width="133dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/login_button_layout_marginTop"
+        android:layout_marginStart="@dimen/login_button_layout_marginStart"
+        android:layout_marginEnd="@dimen/login_button_layout_marginEnd"
+        android:text="@string/enter"
+        android:fontFamily="@font/roboto"
+        app:backgroundTint="@color/gray2"
+        android:textSize="@dimen/login_button_textSize"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/login_editTextNumberPassword" />
+
+    <TextView
+        android:id="@+id/login_register_account"
+        android:layout_width="147dp"
+        android:layout_height="16dp"
+        android:layout_marginTop="@dimen/login_subTitle_layout_marginTop"
+        android:layout_marginStart="@dimen/login_subTitle_layout_marginStart"
+        android:layout_marginEnd="@dimen/login_subTitle_layout_marginEnd"
+        android:text="@string/no_register"
+        android:fontFamily="@font/roboto"
+        android:gravity="center"
+        android:textColor="@color/white_opacity"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/login_button" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
