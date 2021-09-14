@@ -15,13 +15,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun showFragment(){
-        var fragment: Fragment? = null
-
-        fragment = LoginFragment()
-
-        val fragmentTransiction: FragmentTransaction = supportFragmentManager.beginTransaction()
-        fragmentTransiction.replace(R.id.loginFragment, fragment)
-        fragmentTransiction.addToBackStack(null)
-        fragmentTransiction.commit()
+        supportFragmentManager.beginTransaction().apply {
+            replace(R.id.loginFragment, LoginFragment())
+            addToBackStack(null)
+            commit()
+        }
     }
 }
