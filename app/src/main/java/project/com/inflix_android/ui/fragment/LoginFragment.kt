@@ -5,8 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.Toast
+import androidx.navigation.Navigation
+import androidx.navigation.fragment.findNavController
 import es.dmoral.toasty.Toasty
 import kotlinx.android.synthetic.main.fragment_login.*
 import project.com.inflix_android.R
@@ -30,24 +31,29 @@ class LoginFragment : Fragment(), LoginViewInterface {
         return inflater.inflate(R.layout.fragment_login, container, false)
     }
 
+    private val control by lazy{
+        findNavController()
+    }
+
+    lateinit var loginPresenter : LoginPresenterInterface
+
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-        lateinit var loginPresenter : LoginPresenterInterface
-
         //Init
         loginPresenter = LoginPresenter(this)
+
         //Event
-        val button : Button? = view?.findViewById<Button>(R.id.login_button)
-        button!!.setOnClickListener {
+        login_button.setOnClickListener {
             loginPresenter.onLogin(
                 login_editTextTextEmailAddress.text.toString(),
-                login_editTextNumberPassword.text.toString()
+                login_editTextNumberPassword.editText?.text.toString()
             )
         }
     }
 
     override fun onLoginSuccess(message: String) {
+        //control.navigate(R.id.homeFragment)
         activity?.let { Toasty.success(it, message, Toast.LENGTH_SHORT).show() }
     }
 
