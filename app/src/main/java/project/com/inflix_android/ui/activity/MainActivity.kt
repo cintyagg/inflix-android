@@ -5,6 +5,8 @@ import android.os.Bundle
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import project.com.inflix_android.R
+import project.com.inflix_android.api.InfoWebClient
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -14,6 +16,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         showFragment()
+        InfoWebClient().infoCall()
     }
 
     fun showHome() {
@@ -26,7 +29,9 @@ class MainActivity : AppCompatActivity() {
 
     private fun showFragment(){
         val navHostFragment = supportFragmentManager
-            .findFragmentById(R.id.navHostFragment) as NavHostFragment
-        nav = navHostFragment.navController
+            .findFragmentById(R.id.navHostFragment) as? NavHostFragment
+        if (navHostFragment != null) {
+            nav = navHostFragment.navController
+        }
     }
 }

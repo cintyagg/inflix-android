@@ -47,14 +47,14 @@ class LoginFragment : NavHostFragment(), LoginViewInterface {
             )
         }
         login_register_account.setOnClickListener {
-            val act = activity as MainActivity
-            act.showRegister()
+            val act = activity as? MainActivity
+            act?.showRegister()
         }
     }
 
     override fun onLoginSuccess(message: Int) {
-        val act = activity as MainActivity
-        act.showHome()
+        val act = activity as? MainActivity
+        act?.showHome()
     }
 
     override fun onLoginError(message: Int) {
