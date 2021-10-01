@@ -10,10 +10,10 @@ data class LoginRequest(
 
 data class LoginResponse(
     @SerializedName("success") val success : Boolean,
-    @SerializedName("user") val user : User
+    @SerializedName("user") val userResponse : UserResponse
 ) : Serializable
 
-data class User(
+data class UserResponse(
     @SerializedName("id") val id : String,
     @SerializedName("email") val email : String,
     @SerializedName("name") val name : String,
