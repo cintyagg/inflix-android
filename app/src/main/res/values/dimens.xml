@@ -6,6 +6,7 @@
 
     <!-- Login Activity -->
 
+    <dimen name="login_layout_padding_horizontal">16dp</dimen>
     <dimen name="login_title_layout_marginTop">125dp</dimen>
     <dimen name="login_title_textSize">36sp</dimen>
     <dimen name="login_editText_layout_marginStart">16dp</dimen>

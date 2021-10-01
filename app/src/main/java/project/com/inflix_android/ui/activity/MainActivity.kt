@@ -2,21 +2,31 @@ package project.com.inflix_android.ui.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.navigation.NavController
+import androidx.navigation.fragment.NavHostFragment
 import project.com.inflix_android.R
-import project.com.inflix_android.ui.fragment.LoginFragment
 
 class MainActivity : AppCompatActivity() {
+
+    lateinit var nav: NavController
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         showFragment()
     }
 
+    fun showHome() {
+        nav.navigate(R.id.action_loginFragment_to_homeFragment)
+    }
+
+    fun showRegister() {
+        nav.navigate(R.id.action_loginFragment_to_registerFragment)
+    }
+
     private fun showFragment(){
-        supportFragmentManager.beginTransaction().apply {
-            replace(R.id.loginFragment, LoginFragment())
-            addToBackStack(null)
-            commit()
-        }
+        val navHostFragment = supportFragmentManager
+            .findFragmentById(R.id.navHostFragment) as NavHostFragment
+        nav = navHostFragment.navController
     }
 }

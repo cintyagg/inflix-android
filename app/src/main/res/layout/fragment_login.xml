@@ -7,7 +7,10 @@
     android:layout_height="match_parent"
     tools:context=".ui.fragment.LoginFragment"
     android:background="@color/gray"
-    android:padding="16dp">
+    app:defaultNavHost="true"
+    app:navGraph="@navigation/nav_graph"
+    android:id="@+id/loginFragment"
+    android:paddingHorizontal="@dimen/login_layout_padding_horizontal" >
 
     <TextView
         android:id="@+id/login_title"
@@ -42,53 +45,62 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/login_title" />
 
-    <EditText
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/login_editTextNumberPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/login_editText_layout_marginTop2"
         android:layout_marginStart="@dimen/login_editText_layout_marginStart"
         android:layout_marginEnd="@dimen/login_editText_layout_marginEnd"
-        android:background="@drawable/edittext_background"
-        app:drawableEndCompat="@drawable/ic_baseline_visibility_24"
-        android:paddingStart="@dimen/login_editText_paddingStart"
-        android:paddingEnd="@dimen/login_editText_paddingEnd"
-        android:paddingVertical="@dimen/login_editText_paddingVertical"
+        app:endIconMode="password_toggle"
         android:textColorHint="@color/white_opacity"
-        android:maxLength="8"
-        android:textColor="@color/white"
-        android:hint="@string/password"
-        android:inputType="numberPassword"
-        android:textSize="@dimen/login_editText_textSize"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/login_editTextTextEmailAddress" />
+        app:layout_constraintTop_toBottomOf="@+id/login_editTextTextEmailAddress"
+        app:passwordToggleEnabled="true">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etPassword"
+            android:background="@drawable/edittext_background"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/login_editText_paddingStart"
+            android:paddingEnd="@dimen/login_editText_paddingEnd"
+            android:paddingVertical="@dimen/login_editText_paddingVertical"
+            android:maxLength="8"
+            android:hint="@string/password"
+            android:textColor="@color/white"
+            android:inputType="numberPassword"
+            android:textSize="@dimen/login_editText_textSize" />
+    </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:id="@+id/login_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/login_button_layout_marginTop"
         android:layout_marginStart="@dimen/login_button_layout_marginStart"
+        android:layout_marginTop="@dimen/login_button_layout_marginTop"
         android:layout_marginEnd="@dimen/login_button_layout_marginEnd"
         android:text="@string/enter"
-        app:backgroundTint="@color/gray2"
-        android:textSize="@dimen/login_button_textSize"
         android:textAllCaps="false"
+        android:textSize="@dimen/login_button_textSize"
+        app:backgroundTint="@color/gray2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/login_editTextNumberPassword" />
 
-    <TextView
+    <Button
         android:id="@+id/login_register_account"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/login_subTitle_layout_marginTop"
         android:layout_marginStart="@dimen/login_subTitle_layout_marginStart"
         android:layout_marginEnd="@dimen/login_subTitle_layout_marginEnd"
         android:text="@string/no_register"
+        android:textAllCaps="false"
         android:gravity="center"
         android:textColor="@color/white_opacity"
+        android:backgroundTint="@color/gray"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/login_button" />
