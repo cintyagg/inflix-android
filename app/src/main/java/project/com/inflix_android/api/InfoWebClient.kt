@@ -10,9 +10,9 @@ import retrofit2.Response
 
 class InfoWebClient {
 
-    fun infoCall() {
+    fun infoCall(loginRequest: LoginRequest) {
         val call = RetrofitConfig().userInformationService()
-            .getInformations(LoginRequest("user@gmail.com", "12345678"))
+            .getInformations(loginRequest)
         call.enqueue(
         object : Callback<LoginResponse> {
             override fun onResponse(call: Call<LoginResponse>, response: Response<LoginResponse>) {
