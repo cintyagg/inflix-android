@@ -22,8 +22,10 @@ class LoginPresenter(
             doLogin(email, password)
         }.onFailure {
             when (it) {
-                is ValidationException.EmailOrPasswordEmpty -> loginViewInterface.onLoginError(R.string.empty_email_or_password)
-                is ValidationException.EmailOrPasswordWrong -> loginViewInterface.onLoginError(R.string.wrong_email_or_password)
+                is ValidationException.EmptyEmail -> loginViewInterface.onLoginError(R.string.empty_email_or_password)
+                is ValidationException.EmptyPassword -> loginViewInterface.onLoginError(R.string.empty_email_or_password)
+                is ValidationException.WrongEmail -> loginViewInterface.onLoginError(R.string.wrong_email_or_password)
+                is ValidationException.WrongPassword -> loginViewInterface.onLoginError(R.string.wrong_email_or_password)
             }
         }
     }

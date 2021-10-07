@@ -8,9 +8,9 @@ import org.junit.Before
 import org.junit.Test
 import project.com.inflix_android.presentation.ValidationException
 import project.com.inflix_android.presentation.ValidationForm
-import project.com.inflix_android.presenter.LoginPresenter
-import project.com.inflix_android.presenter.LoginPresenterInterface
-import project.com.inflix_android.view.LoginViewInterface
+import project.com.inflix_android.login.presenter.LoginPresenter
+import project.com.inflix_android.login.presenter.LoginPresenterInterface
+import project.com.inflix_android.login.view.LoginViewInterface
 
 class LoginPresenterTest {
     private lateinit var presenter : LoginPresenterInterface
@@ -28,12 +28,40 @@ class LoginPresenterTest {
     }
 
     @Test
+    fun verifyEmptyEmailTest(){
+        every {
+            validation.isDataValid(any(), any())
+        } throws ValidationException.EmptyEmail()
+
+        presenter.onLogin("", "12345678")
+
+        verify {
+            view.onLoginError(any())
+        }
+        println("verifyEmptyEmailTest")
+    }
+
+    @Test
+    fun verifyEmptyPasswordTest(){
+        every {
+            validation.isDataValid(any(), any())
+        } throws ValidationException.EmptyPassword()
+
+        presenter.onLogin("user@gmail.com", "")
+
+        verify {
+            view.onLoginError(any())
+        }
+        println("verifyEmptyPasswordTest")
+    }
+
+    @Test
     fun verifyWrongEmailTest(){
         every {
             validation.isDataValid(any(), any())
-        } throws ValidationException.EmailWrong()
+        } throws ValidationException.WrongEmail()
 
-        presenter.onLogin("cgggmail.com", "12345678")
+        presenter.onLogin("cintya@gmail.com", "12345678")
 
         verify {
             view.onLoginError(any())
@@ -42,30 +70,16 @@ class LoginPresenterTest {
     }
 
     @Test
-    fun verifyEmptyTest(){
+    fun verifyWrongPasswordTest(){
         every {
             validation.isDataValid(any(), any())
-        } throws ValidationException.EmailEmpty()
+        } throws ValidationException.WrongPassword()
 
-        presenter.onLogin("", "12345678")
+        presenter.onLogin("user@gmail.com", "8765")
 
         verify {
             view.onLoginError(any())
         }
-        println("verifyEmptyTest")
-    }
-
-    @Test
-    fun verifyPasswordTest(){
-        every {
-            validation.isDataValid(any(), any())
-        } throws ValidationException.PasswordIncorrect()
-
-        presenter.onLogin("userResponse@gmail.com", "12345")
-
-        verify {
-            view.onLoginError(any())
-        }
-        println("verifyPasswordTest")
+        println("verifyWrongPasswordTest")
     }
 }
