@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/loginFragment"
-        android:name="project.com.inflix_android.ui.fragment.LoginFragment"
+        android:name="project.com.inflix_android.login.ui.fragment.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login">
         <action
@@ -19,12 +19,12 @@
     </fragment>
     <fragment
         android:id="@+id/homeFragment"
-        android:name="project.com.inflix_android.ui.fragment.HomeFragment"
+        android:name="project.com.inflix_android.home.ui.fragment.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" />
     <fragment
         android:id="@+id/registerFragment"
-        android:name="project.com.inflix_android.ui.fragment.RegisterFragment"
+        android:name="project.com.inflix_android.resgister.ui.fragment.RegisterFragment"
         android:label="fragment_register"
         tools:layout="@layout/fragment_register" />
 </navigation>

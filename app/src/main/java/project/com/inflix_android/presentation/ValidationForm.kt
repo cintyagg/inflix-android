@@ -6,8 +6,10 @@ import android.util.Patterns
 class ValidationForm {
     fun isDataValid(email: String, password: String) {
         when {
-            TextUtils.isEmpty(email) || TextUtils.isEmpty(password) -> throw ValidationException.EmailOrPasswordEmpty()
-            !Patterns.EMAIL_ADDRESS.matcher(email).matches() || password.length != 8 -> throw ValidationException.EmailOrPasswordWrong()
+            TextUtils.isEmpty(email) -> throw ValidationException.EmptyEmail()
+            TextUtils.isEmpty(password) -> throw ValidationException.EmptyPassword()
+            !Patterns.EMAIL_ADDRESS.matcher(email).matches() -> throw ValidationException.WrongEmail()
+            password.length != 8 -> throw ValidationException.WrongPassword()
         }
     }
 }

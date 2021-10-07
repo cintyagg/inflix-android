@@ -1,4 +1,4 @@
-package project.com.inflix_android.ui.activity
+package project.com.inflix_android.login.ui.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

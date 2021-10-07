@@ -1,11 +1,11 @@
-package project.com.inflix_android.presenter
+package project.com.inflix_android.login.presenter
 
 import project.com.inflix_android.R
 import project.com.inflix_android.api.dataclass.LoginRequest
 import project.com.inflix_android.api.repository.Repository
 import project.com.inflix_android.presentation.ValidationException
 import project.com.inflix_android.presentation.ValidationForm
-import project.com.inflix_android.view.LoginViewInterface
+import project.com.inflix_android.login.view.LoginViewInterface
 import retrofit2.HttpException
 import rx.android.schedulers.AndroidSchedulers
 import rx.schedulers.Schedulers
@@ -22,8 +22,10 @@ class LoginPresenter(
             doLogin(email, password)
         }.onFailure {
             when (it) {
-                is ValidationException.EmailOrPasswordEmpty -> loginViewInterface.onLoginError(R.string.empty_email_or_password)
-                is ValidationException.EmailOrPasswordWrong -> loginViewInterface.onLoginError(R.string.wrong_email_or_password)
+                is ValidationException.EmptyEmail -> loginViewInterface.onLoginError(R.string.empty_email_or_password)
+                is ValidationException.EmptyPassword -> loginViewInterface.onLoginError(R.string.empty_email_or_password)
+                is ValidationException.WrongEmail -> loginViewInterface.onLoginError(R.string.wrong_email_or_password)
+                is ValidationException.WrongPassword -> loginViewInterface.onLoginError(R.string.wrong_email_or_password)
             }
         }
     }
