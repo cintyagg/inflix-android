@@ -1,11 +1,11 @@
-package project.com.inflix_android.presenter
+package project.com.inflix_android.login.presenter
 
 import project.com.inflix_android.R
 import project.com.inflix_android.api.dataclass.LoginRequest
 import project.com.inflix_android.api.repository.Repository
 import project.com.inflix_android.presentation.ValidationException
 import project.com.inflix_android.presentation.ValidationForm
-import project.com.inflix_android.view.LoginViewInterface
+import project.com.inflix_android.login.view.LoginViewInterface
 import retrofit2.HttpException
 import rx.android.schedulers.AndroidSchedulers
 import rx.schedulers.Schedulers

@@ -1,4 +1,4 @@
-package project.com.inflix_android.ui.fragment
+package project.com.inflix_android.login.ui.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,10 +9,10 @@ import androidx.navigation.fragment.NavHostFragment
 import es.dmoral.toasty.Toasty
 import kotlinx.android.synthetic.main.fragment_login.*
 import project.com.inflix_android.R
-import project.com.inflix_android.presenter.LoginPresenter
-import project.com.inflix_android.presenter.LoginPresenterInterface
-import project.com.inflix_android.ui.activity.MainActivity
-import project.com.inflix_android.view.LoginViewInterface
+import project.com.inflix_android.login.presenter.LoginPresenter
+import project.com.inflix_android.login.presenter.LoginPresenterInterface
+import project.com.inflix_android.login.ui.activity.MainActivity
+import project.com.inflix_android.login.view.LoginViewInterface
 
 class LoginFragment : NavHostFragment(), LoginViewInterface {
 

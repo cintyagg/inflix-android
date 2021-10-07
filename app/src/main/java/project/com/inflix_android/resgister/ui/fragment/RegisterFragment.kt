@@ -1,4 +1,4 @@
-package project.com.inflix_android.ui.fragment
+package project.com.inflix_android.resgister.ui.fragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
