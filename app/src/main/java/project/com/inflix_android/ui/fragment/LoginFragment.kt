@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.fragment.findNavController
 import es.dmoral.toasty.Toasty
 import kotlinx.android.synthetic.main.fragment_login.*
 import project.com.inflix_android.R

@@ -5,8 +5,6 @@ import android.os.Bundle
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import project.com.inflix_android.R
-import project.com.inflix_android.api.InfoWebClient
-
 
 class MainActivity : AppCompatActivity() {
 

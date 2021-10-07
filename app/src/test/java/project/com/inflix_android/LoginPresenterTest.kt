@@ -1,6 +1,5 @@
 package project.com.inflix_android
 
-import android.text.TextUtils
 import io.mockk.every
 import io.mockk.mockk
 import io.mockk.verify
@@ -62,7 +61,7 @@ class LoginPresenterTest {
             validation.isDataValid(any(), any())
         } throws ValidationException.PasswordIncorrect()
 
-        presenter.onLogin("user@gmail.com", "12345")
+        presenter.onLogin("userResponse@gmail.com", "12345")
 
         verify {
             view.onLoginError(any())
