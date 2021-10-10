@@ -21,4 +21,15 @@
     <dimen name="login_subTitle_layout_marginTop">62dp</dimen>
     <dimen name="login_subTitle_layout_marginStart">107dp</dimen>
     <dimen name="login_subTitle_layout_marginEnd">106dp</dimen>
+
+    <!-- Register Activity -->
+    <dimen name="register_dimen_generic">16dp</dimen>
+    <dimen name="register_dimen_generic2">20dp</dimen>
+    <dimen name="register_title_marginTop">48dp</dimen>
+    <dimen name="register_subtitle_marginHorizontal">68dp</dimen>
+    <dimen name="register_subtitle_marginTop">30dp</dimen>
+    <dimen name="register_button_marginHorizontal">113dp</dimen>
+    <dimen name="register_button_marginTop">15dp</dimen>
+    <dimen name="register_button_marginHorizontal2">106dp</dimen>
+
 </resources>

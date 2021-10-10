@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">inflix-android</string>
+
     <!-- Strings related to login -->
     <string name="inflix">INFLIX</string>
     <string name="email">E-mail</string>
@@ -12,4 +13,14 @@
     <string name="empty_email_or_password">Bad request</string>
     <string name="wrong_email_or_password">User not found</string>
     <string name="login_success">Login Success</string>
+
+    <!-- Strings related to register -->
+    <string name="register_subtitle">Seja bem-vindo! Faça seu cadastro \n para acessar o aplicativo!</string>
+    <string name="register_name">Nome</string>
+    <string name="register_email">Email</string>
+    <string name="register_phone">Telefone</string>
+    <string name="register_create_password">Crie uma senha</string>
+    <string name="register_repeat_password">Repita a senha</string>
+    <string name="register_btn">Cadastrar</string>
+    <string name="register_already_registered">Já tenho cadastro</string>
 </resources>

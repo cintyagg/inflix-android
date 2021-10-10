@@ -2,7 +2,6 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/gray"
@@ -10,13 +9,170 @@
     android:id="@+id/registerFragment">
 
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:id="@+id/register_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/register_title_marginTop"
         android:gravity="center"
-        android:text="@string/register_screen"
+        android:text="@string/inflix"
+        android:fontFamily="@font/carter_one"
         android:textColor="@color/white2"
         android:textSize="@dimen/login_title_textSize"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/register_subtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/register_subtitle_marginHorizontal"
+        android:layout_marginTop="@dimen/register_subtitle_marginTop"
+        android:gravity="center"
+        android:text="@string/register_subtitle"
+        android:textColor="@color/white_opacity"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/register_title" />
+
+    <EditText
+        android:id="@+id/register_editTextTextPersonName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/register_dimen_generic"
+        android:layout_marginTop="@dimen/register_dimen_generic2"
+        android:background="@drawable/edittext_background"
+        android:hint="@string/register_name"
+        android:inputType="textPersonName"
+        android:maxLength="80"
+        android:padding="@dimen/register_dimen_generic"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white_opacity"
+        android:textSize="@dimen/login_editText_textSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/register_subtitle" />
+
+    <EditText
+        android:id="@+id/register_editTextTextEmailAddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/register_dimen_generic"
+        android:layout_marginTop="@dimen/register_dimen_generic2"
+        android:background="@drawable/edittext_background"
+        android:hint="@string/register_email"
+        android:inputType="textEmailAddress"
+        android:maxLength="40"
+        android:padding="@dimen/register_dimen_generic"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white_opacity"
+        android:textSize="@dimen/login_editText_textSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/register_editTextTextPersonName" />
+
+    <EditText
+        android:id="@+id/register_editTextTextPhone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/register_dimen_generic"
+        android:layout_marginTop="@dimen/register_dimen_generic2"
+        android:background="@drawable/edittext_background"
+        android:hint="@string/register_phone"
+        android:inputType="phone"
+        android:maxLength="11"
+        android:padding="@dimen/login_dimen_generic"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white_opacity"
+        android:textSize="@dimen/login_editText_textSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/register_editTextTextEmailAddress" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/register_editTextNumberCreatePassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/register_dimen_generic2"
+        android:layout_marginHorizontal="@dimen/register_dimen_generic"
+        app:endIconMode="password_toggle"
+        android:textColorHint="@color/white_opacity"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/register_editTextTextPhone"
+        app:passwordToggleEnabled="true">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/create_Password"
+            android:background="@drawable/edittext_background"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/register_dimen_generic"
+            android:paddingEnd="@dimen/register_dimen_generic2"
+            android:paddingVertical="@dimen/register_dimen_generic"
+            android:maxLength="8"
+            android:hint="@string/register_create_password"
+            android:textColor="@color/white"
+            android:inputType="numberPassword"
+            android:textSize="@dimen/login_editText_textSize" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/register_editTextNumberRepeatPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/register_dimen_generic2"
+        android:layout_marginHorizontal="@dimen/register_dimen_generic"
+        app:endIconMode="password_toggle"
+        android:textColorHint="@color/white_opacity"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/register_editTextNumberCreatePassword"
+        app:passwordToggleEnabled="true">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/reapeat_Password"
+            android:background="@drawable/edittext_background"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/register_dimen_generic"
+            android:paddingEnd="@dimen/register_dimen_generic2"
+            android:paddingVertical="@dimen/register_dimen_generic"
+            android:maxLength="8"
+            android:hint="@string/register_repeat_password"
+            android:textColor="@color/white"
+            android:inputType="numberPassword"
+            android:textSize="@dimen/login_editText_textSize" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/login_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/register_button_marginTop"
+        android:layout_marginHorizontal="@dimen/register_button_marginHorizontal"
+        android:text="@string/register_btn"
+        android:textAllCaps="false"
+        android:textSize="@dimen/login_button_textSize"
+        app:backgroundTint="@color/gray2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/register_editTextNumberRepeatPassword" />
+
+    <Button
+        android:id="@+id/login_register_account"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/register_dimen_generic2"
+        android:layout_marginHorizontal="@dimen/register_button_marginHorizontal2"
+        android:text="@string/register_already_registered"
+        android:textAllCaps="false"
+        android:gravity="center"
+        android:textColor="@color/white_opacity"
+        android:backgroundTint="@color/gray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/login_button" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
