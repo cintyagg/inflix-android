@@ -23,4 +23,13 @@
     <string name="register_repeat_password">Repita a senha</string>
     <string name="register_btn">Cadastrar</string>
     <string name="register_already_registered">Já tenho cadastro</string>
+
+    <!-- Strings related to register -->
+    <string name="search_name">Cintya</string>
+    <string name="titleMovies">Filmes</string>
+    <string name="movieName">The office</string>
+    <string name="movieSubtitle">1994 – 90 min</string>
+    <string name="seeAll">Ver todas</string>
+    <string name="series">Séries</string>
+
 </resources>

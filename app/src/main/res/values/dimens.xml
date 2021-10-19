@@ -23,13 +23,38 @@
     <dimen name="login_subTitle_layout_marginEnd">106dp</dimen>
 
     <!-- Register Activity -->
+
     <dimen name="register_dimen_generic">16dp</dimen>
     <dimen name="register_dimen_generic2">20dp</dimen>
-    <dimen name="register_title_marginTop">48dp</dimen>
+    <dimen name="register_title_marginTop">30dp</dimen>
     <dimen name="register_subtitle_marginHorizontal">68dp</dimen>
-    <dimen name="register_subtitle_marginTop">30dp</dimen>
+    <dimen name="register_subtitle_marginTop">20dp</dimen>
     <dimen name="register_button_marginHorizontal">113dp</dimen>
     <dimen name="register_button_marginTop">15dp</dimen>
     <dimen name="register_button_marginHorizontal2">106dp</dimen>
+
+    <!-- Home Activity -->
+
+    <dimen name="home_dimen_generic">16dp</dimen>
+    <dimen name="home_dimen_generic2">18dp</dimen>
+    <dimen name="home_dimen_generic3">10dp</dimen>
+    <dimen name="home_layout_marginTop">13dp</dimen>
+    <dimen name="home_title_textSize">20sp</dimen>
+    <dimen name="home_user_marginEnd">29dp</dimen>
+    <dimen name="home_generic_textSize">13sp</dimen>
+    <dimen name="home_margin">4dp</dimen>
+    <dimen name="home_titleMovies_textSize">15sp</dimen>
+    <dimen name="home_seeAll_marginTop">23dp</dimen>
+    <dimen name="home_titleSeries_textSize">15sp</dimen>
+    <dimen name="home_dimen_image">40dp</dimen>
+    <dimen name="home_image_marginTop">8dp</dimen>
+    <dimen name="home_movieName_textSize">14sp</dimen>
+    <dimen name="home_movieSubtitle_textSize">12sp</dimen>
+    <dimen name="home_imageButton_marginTop">17dp</dimen>
+    <dimen name="home_imageButton_marginEnd">21dp</dimen>
+    <dimen name="home_divider_width">0dp</dimen>
+    <dimen name="home_divider_height">1dp</dimen>
+    <dimen name="home_divider_marginTop">9dp</dimen>
+    <dimen name="home_layout_height">65dp</dimen>
 
 </resources>

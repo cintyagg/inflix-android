@@ -12,6 +12,7 @@
     <color name="gray">#0E1013</color>
     <color name="gray2">#282A2D</color>
     <color name="gray3">#707070</color>
+    <color name="gray4">#2E2E2E</color>
     <color name="white_opacity">#60F8F9FA</color>
     <color name="gray_opacity">#52707070</color>
 </resources>

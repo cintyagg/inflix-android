@@ -6,17 +6,100 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/gray"
-    android:padding="16dp"
+    android:padding="@dimen/home_dimen_generic"
     android:id="@+id/homeFragment">
 
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:text="@string/home_screen"
+        android:id="@+id/home_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/home_layout_marginTop"
+        android:fontFamily="@font/carter_one"
+        android:text="@string/inflix"
         android:textColor="@color/white2"
-        android:textSize="@dimen/login_title_textSize"
+        android:textSize="@dimen/home_title_textSize"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/home_user"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/home_dimen_generic2"
+        android:layout_marginEnd="@dimen/home_user_marginEnd"
+        android:text="@string/search_name"
+        android:textColor="@color/white"
+        android:textSize="@dimen/home_generic_textSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <SearchView
+        android:id="@+id/searchView"
+        style="@android:style/Widget.Material.SearchView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/home_layout_marginTop"
+        android:background="@color/gray4"
+        android:iconifiedByDefault="false"
+        android:imeOptions="actionSearch"
+        android:inputType="text"
+        android:queryHint="Pesquisar..."
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/home_title" />
+
+    <TextView
+        android:id="@+id/titleMovies"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/home_margin"
+        android:layout_marginTop="@dimen/home_dimen_generic2"
+        android:text="@string/titleMovies"
+        android:textColor="@color/white"
+        android:textSize="@dimen/home_titleMovies_textSize"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/searchView" />
+
+    <TextView
+        android:id="@+id/seeAll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/home_seeAll_marginTop"
+        android:layout_marginHorizontal="@dimen/home_margin"
+        android:text="@string/seeAll"
+        android:textColor="@color/white"
+        android:textSize="@dimen/home_generic_textSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/searchView" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerMovies"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/home_dimen_generic"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintTop_toBottomOf="@+id/seeAll" />
+
+    <TextView
+        android:id="@+id/titleSeries"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/home_margin"
+        android:layout_marginTop="@dimen/home_dimen_generic"
+        android:text="@string/series"
+        android:textColor="@color/white"
+        android:textSize="@dimen/home_titleSeries_textSize"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recyclerMovies" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerSeries"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/home_dimen_generic"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintTop_toBottomOf="@+id/titleSeries"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
